@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- title tag is required and shows up as the main text in a search result and as the title on our browser tab -->
+	<title>Hello html</title>
+	<!-- charset attribute specifies the character encoding of our webpage -->
+	<meta charset="utf-8">
+	<!-- these are optional metadata tags that help with SEP and search engine result rendering -->
+	<meta name="description" content="This is a sample description. I will show up under the big title link in a search result">
+	<meta name="keywords" content="html, css, tutorial">
+	<meta name="author" content="a company">
+	<!-- we can also link to our css files and javascript files in the head of our document. more on that when we start css next week -->
+</head>
+<body>
+	<a href="#bottom">Jump to bottom</a>
+	<p>this is a paragraph with some basic markup within.this is a paragraph with some basic markup within.this is a paragraph with some basic markup within.this is a paragraph with some basic markup within.this is a paragraph with some basic markup within.<strong>this</strong> is a paragraph with some basic markup within. <em> this is a paragraph with some basic markup within.</em></p>
+
+	<p>this is a paragraph with some line breaks in it. <br/>Use with cautions , never use break tags to change the presentation, there should be a semantic reason for using them</p>
+
+	<h1 id="top">this is an h1 heading</h1>	
+	<h2>this is an h2 heading</h2>
+	<h3>this is an h3 heading</h3>
+	<h4>this is an h4 heading</h4>
+	<h5>this is an h5 heading</h5>
+	<h6>this is an h6 heading</h6>
+
+	<p>this is a paragraph with some <small>small text</small></p>
+	<p>this is a paragraph with some <big>big text</big></p>
+
+	<hr>
+
+	<!-- ordered lists render with an order. the order is numerical by default we change the list style type with css-->
+
+	<ol>
+		<li>one</li>
+		<li>two</li>
+		<li>three</li>
+	</ol>
+
+	<!-- unordered lists render in order but the order is less important semantically. they render as a bulleted list by default -->
+
+	<ul>
+		<li>dogs</li>
+		<li>cats</li>
+		<li>fish</li>		
+	</ul>
+
+	<!-- we can also nest lists -->
+
+	<ul>
+		<li>dogs
+			<ul>
+				<li>retriever</li>
+				<li>husky</li>
+				<li>beagle</li>
+			</ul>
+		</li>
+		<li>cats</li>
+		<li>fish</li>		
+	</ul>
+
+	<p>this is a paragraph with a link to <a href="https://www.google.com/">google</a>  in it. this in an external link. external links require absolute urls. this means the full web address, including https...</p>
+
+	<p>this is a paragraph with a link <a href="about.html">another</a> page or file on this server/site, aka internal link, which can be relative urls.</p>
+
+	<!-- we can also link to IDed elements or sections of our page -->
+
+
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Siberian_Husky_with_Blue_Eyes.jpg/220px-Siberian_Husky_with_Blue_Eyes.jpg" alt="siberian husky" title="siberian husky" height="100px">
+
+	<img src="images/sleepy husky.jpg" alt="husky puppy sleeping" title="sleeping pupper" height="100px">
+
+	<p><a href="#top">back to top</a></p>
+	<hr id="bottom">
+
+	<!--
+    The form action usually contains a file to process the form data. For example createuser.php or upload.asp 
+    In this example we just have a dummy link.
+    -->
+    <p>Here is a form containing basic input types. For more information see <a href="http://www.w3schools.com/html/html_forms.asp">W3 Schools</a></p>
+    <form action="#" method="post" name="sampleForm" target="_self">
+        <p>The box and title below are created by using the fieldset and legend tags.</p>
+        <fieldset>
+            <legend>Simple Text Input</legend>
+            <p>This is your most basic text input</p>
+            <label for="FirstName">First Name: </label>
+            <input name="FirstName" type="text" placeholder="First Name">
+            <!-- <p>This text input has a max character length and placeholder text set.</p> -->
+            <label for="LastName">Last Name: </label>
+            <input name="LastName" type="text" placeholder="Last Name" maxlength="15">
+            <label for="Password">Password</label>
+            <input type="password" name="Password" value="asf">
+            <!-- "value" puts the preset info into the password field -->
+            <input type="submit" name="submit">
+        </fieldset>
+        <fieldset>
+            <legend>Text Area</legend>
+            <p>Text areas are good for longer text, like sentences or paragraphs. They can be sized with rows and cols. </p>
+            <label for="WhyIDM">Why did you apply to IDM?</label>
+            <br>
+            <textarea name="WhyIDM" cols="50" rows="10">
+            </textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Check Boxes</legend>
+            <p>Check boxes allow the user to select more than one option at once. Checkboxes in the same group have the same name, but different values! Values are what will actually be sent and received in the database</p>
+            <label for="Pet">What pets do you have?</label>
+            <br>
+            <input type="checkbox" name="Pet" value="Dog">Dog
+            <br>
+            <input type="checkbox" name="Pet" value="Cat">Cat
+            <br>
+            <input type="checkbox" name="Pet" value="Bird">Bird
+            <br>
+            <input type="checkbox" name="Pet" value="Goat">Goat
+        </fieldset>
+        <fieldset>
+            <legend>Radio Buttons</legend>
+            <p>Radio buttons only allow the user to select one option at once. Radio buttonsin the same group have the same name, but different values!</p>
+            <label for="Pet2">Which pet is your favorite?</label>
+            <br>
+            <input type="radio" name="Pet2" value="Dog">Dog
+            <br>
+            <input type="radio" name="Pet2" value="Cat">Cat
+            <br>
+            <input type="radio" name="Pet2" value="Bird">Bird
+            <br>
+            <input type="radio" name="Pet2" value="Goat">Goat
+        </fieldset>
+        <fieldset>
+            <legend>Select</legend>
+            <p>Using the select and option tags you can add items to a dropdown menu.</p>
+            <label for="State">Pick a State!</label>
+            <br>
+            <select name="State">
+                <option>New Hampshire</option>
+                <option>New Jersey</option>
+                <option>New Mexico</option>
+                <option>New York</option>
+            </select>
+        </fieldset>
+        <fieldset>
+        	<label for="email"> Pls enter your email: </label>
+        	<input type="email" name="email" />
+        	<br>
+        	<label for="FavColor">What is your fav color?</label>
+			<input type="color" name="FavColor">
+			<br>
+			<label for="BDay"> Please enter your bdbay</label>
+			<input type="date" name="BDay" />
+			<br>
+			<label> Month and year </label>
+			<input type="month"/>
+			<br>
+			<label> Week and year</label>
+			<input type="week"/>
+			<br>
+			<label> Hour minutes am/pm </label>
+			<input type="time"/>
+			<br>
+			<label for="test"> Just testing out the radio button</label>
+				<br>
+				<input type="radio" name="test" />test1
+				<br>
+				<input type="radio" name="test" />test2
+				<br>
+				<input type="radio" name="test" />test3
+				<br>
+			<label for="test2"> Testing out check-boxes: </label>
+				<input type="checkbox" name="test2" />test4
+				<input type="checkbox" name="test2" />test5
+				<input type="checkbox" name="test2" />test6
+			<br>
+			<label> Slide bar for numbers but has no labels to determine values of slide position </label>
+			<input type="range" min="0" max="40"/>
+			<br>
+			<input type="submit" value="SUBMIT!"/>
+			<br>
+			<input type="button" value="Click this Button"/>
+			<br>
+			<input type="reset"/>
+        </fieldset>
+        <p>Finally, we use a button to submit our form!</p>
+        <input name="Submit" type="button" value="Submit">
+        <p>Here is the same button but it is disabled. (Can't be clicked)</p>
+        <input name="SubmitD" type="button" value="Submit" disabled>
+    </form>
+
+
+</body>
+</html>
