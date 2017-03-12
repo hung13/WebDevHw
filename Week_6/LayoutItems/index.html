@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Hero | Jumbotron Tagline Grid | Font Awesome </title>
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: "Helvetica", Arial, sans-serif;
+		}
+
+		div.hero{
+			width: 100vw;
+			position: relative;
+		}
+
+		.hero img{
+			width: 100%;
+		}
+
+		.hero article{
+			position: absolute;
+			width: 50vw;
+			right: 0;
+			top: 65%;
+			color: white;
+			padding: 2%;
+			background-color: rgba(100, 100, 100, 0.5);
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+			background: -moz-linear-gradient(left, rgba(100,100,100,1) 0%, rgba(255,255,255,0) 100%); 
+			/* FF3.6-15 */
+			background: -webkit-linear-gradient(left, rgba(100,100,100,1) 0%,rgba(255,255,255,0) 100%); 
+			/* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right, rgba(100,100,100,1) 0%,rgba(255,255,255,0) 100%); 
+			/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+		}
+
+		button, 
+		a.button{
+			/*for buttons*/
+			border: 2px solid black;
+			display: inline-block;
+			border-radius: 7px;
+			padding: 5px;
+			line-height: 25px;
+			width: 200px;
+			background-color: #FFFFFF;
+			font-size: 18px;
+			/*for the anchor tags*/
+			color: black;
+			text-decoration: none;
+			text-align: center;
+			/*for anchor tag with roll button but no href*/
+			cursor: pointer;
+			transition: all 0.5s ease-in-out;
+		}
+
+		button:hover,
+		a.button:hover{
+			border-color: white;
+			background-color: black;
+			color: white;
+		}
+
+		header{
+			width: 100%;
+			background-color: black;
+			color: white;
+			position: fixed;
+			z-index: 10;
+			height: 50px;
+			line-height: 50px;
+		}
+
+		nav h1{
+			margin: 0;
+		}
+
+		nav ul{
+			list-style-type: none;
+			margin-top: 7px;
+			line-height: 25px;
+		}
+
+		i.fa{
+			color: pink;
+		}
+
+		i.fa:hover{
+			color: white;
+		}
+
+		.grid_4 p{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav class="container clearfix">
+			<h1 class="grid_2">Logo</h1>
+			<ul class="grid_3 prefix_7">
+				<li class="grid_1 alpha"><i class="fa fa-instagram fa-2x fa-spin"></i></li>
+				<li class="grid_1"><i class="fa fa-twitter-square fa-2x"></i></li>
+				<li class="grid_1 omega"><i class="fa fa-facebook-square fa-2x"></i></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="hero">
+		<img src="http://placehold.it/600x300/333333/ffffff?text=webdev-rocks">
+		<!-- can be used in place of logo and pics and such -->
+		<article>
+			<h1>Selling stuff</h1>
+			<p>tis a paragraph. tis a paragraph. tis a paragraph. tis a paragraph. tis a paragraph.</p>
+			<button>Buy</button>
+			<a class="button" href="#"> link to stuff</a>
+			<a class="button" role="button"> add to cart </a>
+		</article>
+	</div>
+
+	<div class="container clearfix">
+		<div class="grid_4">
+			<p>Embed audio</p>
+		</div>
+		<div class="grid_4">
+			<p>Embed audio</p>
+		</div>
+		<div class="grid_4">
+			<p>Embed audio</p>
+		</div>
+	</div>
+
+	<div class="container clearfix">
+		<div class="grid_6">
+			<p>Embed vimeo</p>
+			<!-- paste iframe from website -->
+		</div>
+
+		<div class="grid_6">
+			<p>Embed youtube</p>
+		</div>
+	</div>
+</body>
+</html>

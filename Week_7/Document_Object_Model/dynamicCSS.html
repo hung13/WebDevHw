@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.active{
+			background-color: grey;
+			color: white;
+			font-size: 60px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function toggleActive(){
+			var element = document.getElementById("changeMe");
+			console.log(element.classList);
+
+			if (element.classList.contains("active")){
+				element.classList.remove("active");
+				element.innerHTML = "I'm not active anymore";
+			} else{
+				element.classList.add("active");
+				element.innerHTML = "I'm active";
+			}
+		}
+
+		
+	</script>
+</head>
+<body>
+	<h1 id="changeMe" onclick="toggleActive()">Tis a header</h1>
+</body>
+</html>

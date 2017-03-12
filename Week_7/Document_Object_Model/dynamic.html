@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+	<p onclick="add1P()">Add one paragrap</p>
+	<button onclick="addMultiP(6)">Add multiple paragraph</button>
+
+	<div id="content">
+		<p>This is a dummy paragraph</p>
+	</div>
+
+	<script type="text/javascript">
+		var content;
+		content = document.getElementById('content');
+		console.log(content);
+
+		function add1P(){
+			content.innerHTML = "<p>asdf</p>";
+		}
+
+		function addMultiP(num){
+			for (var i = 0; i < num; i++){
+				var p = document.createElement("P");
+				console.log("p");
+				var text = document.createTextNode("This is paragraph #" + i);
+				p.appendChild(text);
+				content.appendChild(p);
+			}
+		}
+	</script>
+</body>
+</html>

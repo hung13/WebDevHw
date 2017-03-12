@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var myVar = "number";
+		console.log(myVar);
+
+		var myVar2;
+		console.log(myVar2);
+
+		myVar2 = 4 + 4;
+		console.log(myVar2);
+		console.log(typeof myVar2);
+
+		var temp = 60;
+		console.log("Today's temperature is " + temp + "F");
+
+		function calcBill(price1, price2){
+			var sum = price1 + price2;
+			alert("Your bill is: $" + sum);
+		}
+
+		var isOn = true;
+
+		function switchOnOff(){
+			if (isOn){
+				alert("isOn is true, switching to false")
+				isOn = false;
+			} else{
+				alert("isOn is false, switching to true")
+				isOn = true;
+			}
+		}
+
+		function countToN(num){
+			for (var i = 0; i <= num; i++){
+				console.log(i);
+			}
+		}
+
+		countToN(25);
+
+	</script>
+</head>	
+<body>
+
+	<button onclick="calcBill(45.00, 5.25)">Calculate Bill</button>
+
+	<button onclick="switchOnOff()">Toggle Switch</button>
+
+</body>
+</html>
