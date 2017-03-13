@@ -1,0 +1,158 @@
+
+Responsive 996px grid system ~ Style CSS.
+Copyright 2013, Josh Cope
+*/
+
+/* =============================================================================
+   Site Styles
+   ========================================================================== */
+*{
+   margin: 0;
+   padding: 0;   
+}
+
+body{
+   font-family: "Helvetica", Arial, sans-serif;
+}
+
+header{
+   width: 100%;
+   background-color: rgba(26,3,21,0.85);
+   position: fixed;
+   z-index: 10;
+   height: 70px;
+   line-height: 70px;
+}
+
+header nav{
+   float: right;
+}
+
+header nav ul{
+   margin: 0;
+   padding: 0;
+   display: block;
+}
+
+header nav ul li{
+   display: inline-block;
+}
+
+header nav ul li a{
+   text-decoration: none;
+   color: white;
+   list-style-type: none;
+   line-height: 70px;
+   display: block;
+   padding: 0px 20px;
+   font-size: 1.3em;
+}
+
+div.introSection{
+   width: 100vw;
+   position: relative;
+}
+
+.introSection img{
+   width: 100%;
+}
+
+.introSection .design{
+   background-color: rgb(85,5,140);
+   color: white;
+   position: absolute;
+   top: 25%;
+   right: 0%;
+   padding: 2px 0px 2px 30px;
+   text-align: left;
+}
+
+.introSection .build{
+   background-color: rgb(0,79,146);
+   color: white;
+   position: absolute;
+   top: 40%;
+   right: 0%;
+   padding: 2px 0px 2px 30px;
+   text-align: left;
+}
+
+.introSection .compete{
+   background-color: rgb(0,159,231);
+   color: white;
+   position: absolute;
+   top: 55%;
+   right: 0%;
+   padding: 2px 0px 2px 30px;
+   text-align: left;
+}
+
+.introSection .this{
+   background-color: rgba(26,3,21,0.85);
+   color: white;
+   position: absolute;
+   top: 70%;
+   padding: 5px 0px 5px 30px;
+   text-align: left;
+}
+
+.introSection .motorsports{
+   background-color: rgba(26,3,21,0.85);
+   color: white;
+   position: absolute;
+   top: 80%;
+   padding: 5px 0px 5px 30px;
+   text-align: left;
+}
+
+/* =============================================================================
+   Page Styles
+   ========================================================================== */
+
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Tablet Portrait size to Base 996px */
+@media only screen and (min-width: 768px) and (max-width: 995px) {
+	.container{
+		background-color: rgba(255, 0, 0, 0.5)
+	}
+}
+
+/* All Mobile Sizes */
+@media only screen and (max-width: 767px) {
+	.container{
+		background-color: rgba(0, 255, 0, 0.5)
+	}
+}
+
+/* Mobile Landscape Size to Tablet Portrait */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.container{
+		background-color: rgba(0, 0, 255, 0.5)
+	}
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size */
+@media only screen and (max-width: 479px) {
+	.container{
+		background-color: rgba(255, 255, 0, 0.5)
+	}
+}
+
+
+/* =============================================================================
+   Font-Face
+   ========================================================================== */
+/* This is the proper syntax for an @font-face file
+
+/* @font-face {
+font-family: 'FontName';
+src: url('../fonts/FontName.eot');
+src: url('../fonts/FontName.eot?iefix') format('embedded-opentype'),
+url('../fonts/FontName.woff') format('woff'),
+url('../fonts/FontName.ttf') format('truetype'),
+url('../fonts/FontName.svg#FontName') format('svg');
+font-weight: normal;
+font-style: normal; }
