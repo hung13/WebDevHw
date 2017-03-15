@@ -38,8 +38,8 @@ Licensed under GPL and MIT
 	.grid_12 {
 		display: inline;
 		float: left;
-		margin: 5px 13px;
-		padding: 0;
+		margin-right: 13px;
+		margin-left: 13px;
 	}
 
 	.push_1, .pull_1,
