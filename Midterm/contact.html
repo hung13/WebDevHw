@@ -16,51 +16,75 @@
 		<nav>
 			<ul>
 				<li><a href="index.html">Our Story</a></li>
-				<li><a href="#">Updates</a></li>
+				<li><a href="http://blog.nyutandonmotorsports.com/">Updates</a></li>
 				<li><a href="team.html">Team</a></li>
 				<li><a href="contact.html">Contact Us</a></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
-		<form class="contactForm" action="#" method="post" name="contactUs" target="_self">
-			<fieldset>
-				<legend><h1>Contact Us</h1></legend>
-				<label for="name">Name: </label>
-	            <input name="name" type="text" placeholder="Kyle Smith">
-	            <br>
+		<div class="contact container clearfix">
+			<div class="map" id="googleMap"></div>
+				<script>
+					function myMap() {
+						var mapCanvas = document.getElementById("googleMap");
+						var mapOptions = {
+							center: new google.maps.LatLng(51.508742, -0.120850),
+							zoom: 7,
+							scrollwheel: false,
+							panControl: true,
+							zoomControl: true,
+							mapTypeControl: true,
+							scaleControl: true,
+							streetViewControl: true,
+							overviewMapControl: true,
+							rotateControl: true   
+						};
+						var map = new google.maps.Map(mapCanvas, mapOptions);
+					}
+				</script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmhi6W9oJYlH8J3fDPL2q26dQwkW4tMGk&callback=myMap"></script>
 
-	            <label for="emailAddress">Email: </label>
-	            <input name="emailAddress" type="text" placeholder="example@mail.com">  
-	            <br>          
+			<form class="contactForm" action="#" method="post" name="contactUs" target="_self">
+				<fieldset class="grid_4">
+					<legend><h1>Contact Us</h1></legend>
+					<label for="name" class="grid_1">Name: </label>
+		            <input name="name" type="text" placeholder="Kyle Smith" class="grid_2 suffix_1">
 
-				<label for="subject">Subject: </label>
-	            <input name="subject" type="text">
-	            <br>
+		            <label for="emailAddress" class="grid_1">Email: </label>
+		            <input name="emailAddress" type="text" placeholder="example@mail.com" class="grid_2 suffix_1">
 
-	            <label for="question">Inquiry:</label>
-	            <br>
+					<label for="subject" class="grid_1">Subject: </label>
+		            <input name="subject" type="text" class="grid_2 suffix_1">
+		            <br>
 
-	            <textarea name="question" cols="50" rows="10"></textarea>
-            	<br>
+		            <label for="question" class="grid_1">Inquiry:</label>
+		            <br>
 
-            	<button>Submit</button>
-            </fieldset>
-		</form>
+		            <textarea name="question" cols="35" rows="9"></textarea>
+	            	<br>
 
-		<div class="socialMediaBtn">
-			<p>
-		        <a href="#">facebook</a>
-		        <a href="#">twitter</a>
-		        <a href="#">instagram</a> 
-		    </p>
+	            	<button>Submit</button>
+	            </fieldset>
+			</form>
+
+			<div class="socialMediaBtns grid_1">
+		        <a class="grid_1" href="#"><img src="img/facebook-logo_inverted.gif"></a>
+		        <a class="grid_1" href="#"><img src="img/twitter-logo-silhouette_inverted.gif"></a>
+		        <a class="grid_1" href="#"><img src="img/instagram-logo_inverted.gif"></a>
+		    </div>
+		</div>
+
+		<div class="moreInfoSection container clearfix">
+			<img src="img/GearTrain_croppedwhite.jpg">
+			<h1 class="updatesBanner grid_6 prefix_6"><a href="http://blog.nyutandonmotorsports.com/">Check out our updates</a></h1>
+			<h1 class="teamBanner grid_5 prefix_7"><a href="team.html">Meet the Team</a></h1>
+			<h1 class="contactBanner grid_4 prefix_8"><a href="contact.html">Contact Us</a></h1>
 		</div>
 
 		<footer>
-			<h1>Meet the Team</h1>
-			<h1>Contact Us</h1>
-		</footer>
-	</main>
+			<p>March 2017</p>
+		</footer>	</main>
 
 </body>
 </html>

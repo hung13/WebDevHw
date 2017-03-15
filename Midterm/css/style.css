@@ -57,13 +57,9 @@ header nav ul li a{
 
 /*////////////////////////////////////////intro section//////////////////////////////*/
 
-div.introSection{
+.introSection{
    width: 100%;
    position: relative;
-}
-
-.introSection img{
-   width: 100%;
 }
 
 .grid_1,
@@ -85,9 +81,9 @@ div.introSection{
    text-align: left;
 }
 
-.design,
-.build,
-.compete,
+.designBanner,
+.buildBanner,
+.competeBanner,
 .this,
 .motorsports{
    background-color: rgba(26,3,21,0.85);
@@ -95,19 +91,19 @@ div.introSection{
    position: absolute;
 }
 
-.introSection .design{
+.introSection .designBanner{
    top: 25%;
    right: 0%;
    padding: 2px 0px 2px 30px;
 }
 
-.introSection .build{
+.introSection .buildBanner{
    top: 37%;
    right: 0%;
    padding: 2px 0px 2px 30px;
 }
 
-.introSection .compete{
+.introSection .competeBanner{
    top: 49%;
    right: 0%;
    padding: 2px 0px 2px 30px;
@@ -189,6 +185,174 @@ div.introSection{
 .aboutSection .description{
    margin-bottom: 20px;
 }
+/*////////////////////////////////////////moreInfoSection///////////////////////////////*/
+
+.moreInfoSection{
+   width: 100%;
+   position: relative;
+}
+
+.moreInfoSection a{
+   text-decoration: none;
+   color: white;
+}
+
+.updatesBanner,
+.teamBanner,
+.contactBanner{
+   background-color: rgba(26,3,21,0.85);
+   color: white;
+   position: absolute;
+}
+
+.moreInfoSection .updatesBanner{
+   top: 25%;
+   right: 0%;
+   padding: 2px 0px 2px 30px;
+}
+
+.moreInfoSection .teamBanner{
+   top: 37%;
+   right: 0%;
+   padding: 2px 0px 2px 30px;
+}
+
+.moreInfoSection .contactBanner{
+   top: 49%;
+   right: 0%;
+   padding: 2px 0px 2px 30px;
+}
+
+/*////////////////////////////////////////teamIntro///////////////////////////////*/
+
+.teamIntro{
+   width: 100%;
+   position: relative;
+}
+
+.tandonTeamBanner,
+.tandonTeamDesc{
+   position: absolute;
+   left: 18%;
+   color: white;
+   padding: 10px;
+}
+
+.tandonTeamBanner{
+   text-align: center;
+   top: 30%;
+}
+
+.tandonTeamDesc{
+   top: 41%;
+}
+
+.teamFounders,
+.teamMembers{
+   width: 100%;
+   color: white;
+   background-color: #6e3667;
+   padding-bottom: 30px;
+}
+
+.teamFoundersTitle{
+   color: #88d317;
+   text-align: center;
+}
+
+.founder1 h2,
+.founder2 h2{
+   color: #88d317;
+
+}
+
+.teamMembers{
+   margin: 0px;
+}
+
+.teamMembers h2{
+   margin: 0px;
+   color: #88d317;
+   text-align: center;
+}
+
+.teamMembers figure{
+   margin: 20px 45px;
+}
+
+.teamMembers figcaption{
+   text-align: center;
+}
+
+.teamMembers figcaption h3{
+   color: #88d317;
+}
+
+/*////////////////////////////////////////contact///////////////////////////////*/
+
+.contact{
+   width: 100%;
+   position: relative;
+}
+
+#googleMap{
+   width: 100%;
+   height: 580px;
+}
+
+.contactForm{
+   position: absolute;
+   top: 18%;
+   left: 55%;
+   background-color: rgba(26,3,21,0.85);
+   color: #88d317;
+   padding: 10px;
+    /*h-shadow v-shadow | blur spread color*/
+    -webkit-box-shadow: 5px 5px 5px 5px rgba(10,10,10,0.3);
+    -moz-box-shadow: 5px 5px 5px 5px rgba(10,10,10,0.3);
+    box-shadow: 5px 5px 5px 5px rgba(10,10,10,0.3);
+}
+
+.contactForm .grid_1{
+   margin-top: 4px;
+}
+
+.contactForm textarea{
+   margin-left: 10px;
+   margin-top: 7px;
+}
+
+.contactForm button{
+   margin-top: 10px;
+   margin-left: 233px;
+}
+
+.socialMediaBtns{
+   margin-left: 535px;
+   background-color: rgba(26,3,21,0.85);
+   position: absolute;
+   top: 35%;
+   right: 12%;
+    /*h-shadow v-shadow | blur spread color*/
+    -webkit-box-shadow: 5px 5px 5px 5px rgba(10,10,10,0.3);
+    -moz-box-shadow: 5px 5px 5px 5px rgba(10,10,10,0.3);
+    box-shadow: 5px 5px 5px 5px rgba(10,10,10,0.3);
+
+}
+
+.socialMediaBtns img{
+   width: 48px;
+}
+
+/*////////////////////////////////////////footer///////////////////////////////*/
+
+footer p{
+   margin: 0px;
+   padding: 10px 30px;
+   text-align: left;
+   background-color: rgba(26,3,21,0.85);
+   color: #88d317;
+}
 
 /*////////////////////////////////////////hover///////////////////////////////*/
 
@@ -197,11 +361,20 @@ header nav a:hover{
    color: #88d317;
 }
 
-.design:hover,
-.build:hover,
-.compete:hover{
+.designBanner:hover,
+.buildBanner:hover,
+.competeBanner:hover,
+.updatesBanner:hover,
+.teamBanner:hover,
+.contactBanner:hover{
    color: #88d317;
    transform: scale(1.05);
+}
+
+.updatesBanner a:hover,
+.teamBanner a:hover,
+.contactBanner a:hover{
+   color: #88d317;
 }
 
 /* =============================================================================
