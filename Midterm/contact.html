@@ -25,22 +25,27 @@
 	<main>
 		<div class="contact container clearfix">
 			<div class="map" id="googleMap"></div>
+			<div class="map" id="googleMap2"></div>
 				<script>
 					function myMap() {
-						var mapCanvas = document.getElementById("googleMap");
+						var myCenter = new google.maps.LatLng(40.694412, -73.986531);
+						var mapCanvas = document.getElementById("googleMap"); 
 						var mapOptions = {
-							center: new google.maps.LatLng(51.508742, -0.120850),
-							zoom: 7,
-							scrollwheel: false,
-							panControl: true,
-							zoomControl: true,
-							mapTypeControl: true,
-							scaleControl: true,
-							streetViewControl: true,
-							overviewMapControl: true,
-							rotateControl: true   
+							center: myCenter,
+							zoom: 16,
+							scrollwheel: false
 						};
+
 						var map = new google.maps.Map(mapCanvas, mapOptions);
+						map.panBy(100, 0);
+
+						var marker = new google.maps.Marker({
+							position:myCenter
+						});	marker.setMap(map);
+
+						var infowindow = new google.maps.InfoWindow({
+							content: "6 MetroTech Center, Brooklyn, NY 11201"
+						}); infowindow.open(map, marker);
 					}
 				</script>
 				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmhi6W9oJYlH8J3fDPL2q26dQwkW4tMGk&callback=myMap"></script>
@@ -84,7 +89,18 @@
 
 		<footer>
 			<p>March 2017</p>
-		</footer>	</main>
+		</footer>	
+	</main>
 
 </body>
 </html>
+
+<!-- credits for the icons -->
+<!-- 
+
+<div>Icons made by <a href="http://www.flaticon.com/authors/elegant-themes" title="Elegant Themes">Elegant Themes</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+<div>Icons made by <a href="http://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+ -->
