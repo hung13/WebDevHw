@@ -11,8 +11,25 @@ Copyright 2013, Josh Cope
    padding: 0;   
 }
 
+@font-face{
+   font-family: headingFont;
+   src: url("Patua One and Oswald/patuaone/PatuaOne-Regular.ttf");
+   font-stretch: ultra-expanded;
+}
+
+@font-face{
+   font-family: bodyFont;
+   src: url("Patua One and Oswald/oswald/Oswald-Light.ttf");
+}
+
 body{
-   font-family: "Helvetica", Arial, sans-serif;
+   font-family: bodyFont;
+}
+
+header,
+h1,
+h2{
+   font-family: headingFont;
 }
 
 /*////////////////////////////////////////header and nav//////////////////////////////*/
@@ -161,6 +178,7 @@ header nav ul li a{
 
 .aboutSection h1{
    margin: 20px auto;
+   margin-left: 30px;
 }
 
 .aboutBajaRow .grid_4{
@@ -251,10 +269,8 @@ header nav ul li a{
    text-align: center;
 }
 
-.founder1 h2,
-.founder2 h2{
+.teamFounders h2{
    color: #88d317;
-
 }
 
 .teamMembers{
@@ -293,6 +309,7 @@ header nav ul li a{
    background-color: rgba(26,3,21,0.85);
    color: #88d317;
    padding: 10px;
+   border-radius: 10px;
 }
 
 .contactForm .grid_1{
@@ -305,8 +322,12 @@ header nav ul li a{
 }
 
 .contactForm button{
+   background-color: #88d317;   
    margin-top: 10px;
-   margin-left: 233px;
+   margin-left: 242px;
+   border: 0px;
+   border-radius: 5px;
+   padding: 5px;
 }
 
 .socialMediaBtns,
@@ -318,16 +339,16 @@ header nav ul li a{
 }
 
 .socialMediaBtns{
-   margin-left: 535px;
    background-color: rgba(26,3,21,0.85);
    position: absolute;
    top: 35%;
    right: 7%;
-
+   border-radius: 10px;
 }
 
 .socialMediaBtns img{
    width: 48px;
+   padding: 5px;
 }
 
 /*////////////////////////////////////////footer///////////////////////////////*/
@@ -361,6 +382,10 @@ header nav a:hover{
 .teamBanner a:hover,
 .contactBanner a:hover{
    color: #88d317;
+}
+
+.contactForm button:hover{
+   transform: scale(1.1);
 }
 
 /* =============================================================================
