@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>math operations</title>
+	<script type="text/javascript">
+		var x = 15;
+		var y = 35;
+
+		var z = 2.25;
+		var zDown = Math.floor(z);
+		var zUp = Math.ceil(z);
+		var zNormal = Math.round(z);
+
+		var random = Math.random();
+		console.log(random);
+
+		function coinFlip(){
+			var yesNO = Math.round(Math.random());
+			console.log(yesNO);
+
+			if (yesNO === 0){
+				alert("heads");
+			} else{
+				alert("tails");
+			}
+		}
+
+		document.addEventListener("DOMContentLoaded", function(){
+			var btn = document.getElementById("flipBtn");
+
+			// btn.addEventListener("click", function(e){
+			// 	console.log(e.target);
+			// });
+
+			btn.addEventListener("click", onclick);
+		});
+
+		function randNum(max){
+			var random = Math.round(max * Math.random());
+			alert(random);
+		}
+
+		function randNumRange(min, max){
+			var random = Math.round(Math.random() * (max - min) + min);
+			return random
+		}
+
+		var num = randNumRange(4, 352);
+
+	</script>
+</head>
+<body>
+
+	<button onclick="coinFlip()" id="flipBtn"> coin flip </button>
+
+</body>
+</html>

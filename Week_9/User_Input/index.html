@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		h1{
+			text-transform: uppercase;
+		}
+
+		.red{
+			color: red;
+		}
+
+		.green{
+			color: seagreen;
+		}
+
+		.blue{
+			color: blue;
+		}
+
+		.purple{
+			color: rebeccapurple;
+		}
+	</style>
+	<script type="text/javascript">
+		var btn;
+		var h1;
+		var inputNum;
+
+		document.addEventListener("DOMContentLoaded", function(){
+			h1 = document.getElementById("change");
+			inputNum = document.getElementById("num");
+			btn = document.getElementById("changeBtn");
+
+			myBtn.addEventListener("click", changeHeadingClass);
+		});
+
+		function changeHeadingClass(){
+			var n = inputNum.value;
+			n = parseInt(n);
+			switch(n){
+				case 0:
+					change.className = "red";
+					break;
+				case 1:
+					change.className = "green";
+					break;
+				case 2:
+					change.className = "blue";
+					break;
+				case 3:
+					change.className = "purple";
+					break;
+				default:
+					change.innerHTML = "not an int between 0 - 3";
+					break;
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<h1 id="change">Changes based on user input</h1>
+	<form>
+		<fieldset>
+			<legend>Legend/title = input a number</legend>
+			<label for="num">number between 0 - 30</label>
+			<!-- the "for" in label matches with "name" in input so they all match with the database -->
+			<!-- the "id" in input is for javascript/css -->
+			<input type="number" name="num" id="num" min="0" max="3" step="1">
+			<button type="buttom" id="changeBtn">Click</button>
+			<!-- default type "submit" without any action refreshes the page and display input data in url -->
+		</fieldset>
+	</form>
+</body>
+</html>

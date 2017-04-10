@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div.container{
+			width: 300px;
+			margin: 0 auto;
+			line-height: 40px;
+			margin-top: 5%;
+			border: 1px solid black;
+			border-radius: 10px;
+			padding: 20px 0px;
+		}
+		div.well{
+			border-radius: 10px;
+			background-color: #ddd;
+			min-height: 100px;
+			padding: 20px;
+		}
+
+		div.container button{
+			width: 100%;
+			padding: 10px 0px;
+			border: 1px solid black;
+			border-radius: 10px;
+			margin: 10px 0;
+			cursor: pointer;
+			background-color: #333;
+			color: white;
+			transition: background-color 1s ease;
+		}
+
+		div.container button:hover{
+			background-color: #555;
+		}
+
+		input[type="number"]{
+			width: 100%;
+			padding: 10px 0px;
+			border: 1px solid black;
+			border-radius: 10px;
+			text-align: center;
+			font-size: 24px;
+		}
+	</style>
+	<script type="text/javascript">
+
+		document.addEventListener("DOMContentLoaded", function(){
+			document.getElementById("calcBtn").addEventListener("click", calcTip);
+		});
+
+		function calcTip(){
+			var results = document.getElementById("tipResult");
+			var b = document.getElementById("bill");
+			b = parseFloat(b.value);
+			var percent;
+			var tip;
+			var total;
+			var arrTip = document.getElementsByName("tip");
+
+			for (var i = 0; i < arrTip.length; i++){
+				if (arrTip[i].checked){
+					percent = parseFloat(arrTip[i].value);
+					break;
+				}
+			}
+
+			tip = b * percent;
+			tip = round(tip);
+			total = b + tip;
+
+			var p1 = document.createElement("P");
+			var p2 = document.createElement("P");
+			var p3 = document.createElement("P");
+			var p4 = document.createElement("P");
+			var t1 = document.createTextNode("bill: $" + b)
+			var t2 = document.createTextNode("tip percentage: " + percent)
+			var t3 = document.createTextNode("tip: $" + tip)
+			var t4 = document.createTextNode("total: $" + total)
+
+			p1.appendChild(t1);
+			p2.appendChild(t2);
+			p3.appendChild(t3);
+			p4.appendChild(t4);
+
+			results.appendChild(p1);
+			results.appendChild(p2);
+			results.appendChild(p3);
+			results.appendChild(p4);
+		}
+
+		function round(number){
+			return Math.ceil(number * 100) / 100;
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<form>
+			<label for="bill">Enter bill value</label><br>
+			<input type="number" name="bill" id="bill" step="0.01" min="0" required><br>
+			<label>
+				<input type="radio" name="tip" value="0.05" checked>5%
+			</label>
+			<label>
+				<input type="radio" name="tip" value="0.10">10%
+			</label>
+			<label>
+				<input type="radio" name="tip" value="0.15">15%
+			</label>
+			<label>
+				<input type="radio" name="tip" value="0.20">20%
+			</label>
+			<button type="button" id="calcBtn">calc</button>
+		</form>
+		<div class="well" id="tipResult"></div>
+	</div>
+</body>
+</html>

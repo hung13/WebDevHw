@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", getLocation());
+
+		function getLocation(){
+			if (navigator.geolocation){
+				navigator.geolocation.getCurrentPosition(setPosition());
+			} else{
+				alert("Geolocation not supported");
+			}
+		};
+
+		function setPosition(position){
+			console.log(position);
+			console.log(position.coords.latitude);
+
+			var lat = position.coords.latitude;
+			var long = position.coords.longitude;
+			var location = document.getElementById("location");
+			location.innerHTML = "Lat: " + lat + "<br>Long: " + long;
+		};
+
+
+	</script>
+</head>
+<body>
+	<div id="location">
+		<p>Triangulating position...</p>
+	</div>
+</body>
+</html>
