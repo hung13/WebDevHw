@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cities with Highest Tourism Rates</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<style type="text/css">
+		.container{
+			margin: 20px 0px;
+		}
+
+		#map{
+			height: 100%;
+			width: 98%;	
+	        margin: 0 auto;
+	        padding: 0;
+		}
+
+		.btn-default{
+			margin: 0px 2.5px;
+		}
+		
+		.btn-default:hover{
+		  color: #ffffff;
+		  background-color: #869B40;
+		  outline: none;
+		}
+
+		.btn-default:focus,
+		.btn-default:active,
+		.btn-default.active{
+			color: #ffffff;
+			background-color: #f7574c;
+		  	outline: none;
+		}
+
+		html,
+    	body {
+	        height: 92%;
+	        width: 100%;
+	    }				
+	</style>
+</head>
+<body>
+
+<div class="container" id="row">
+	<button class="btn btn-default col-md-2" id="current"> Current Location </button>
+	<button class="btn btn-default col-md-1" id="seoul"> Seoul</button>
+	<button class="btn btn-default col-md-2" id="singapore"> Singapore City</button>
+	<button class="btn btn-default col-md-1" id="newYork"> New York</button>
+	<button class="btn btn-default col-md-1" id="istanbul"> Istanbul</button>
+	<button class="btn btn-default col-md-1" id="dubai"> Dubai</button>
+	<button class="btn btn-default col-md-1" id="paris"> Paris</button>
+	<button class="btn btn-default col-md-1" id="bangkok"> Bangkok</button>
+	<button class="btn btn-default col-md-1" id="london"> London</button>
+</div>
+
+<div id="map"></div>
+    <script>
+	    var map;
+	    var myLatLng = {};
+
+    	document.addEventListener("DOMContentLoaded", function(){
+			var element = document.getElementById("row");
+			element.addEventListener("click", function(event){getID(event.target);}, false);
+		});
+
+		function changeMap(mapName){
+			switch(mapName){
+				case "current":
+					getLocation();
+					break;
+				case "singapore":
+					setPositionLatLong(1.283333, 103.833333);
+					break;
+				case "seoul":
+					setPositionLatLong(37.566667, 126.966667);
+					break;
+				case "newYork": 
+					setPositionLatLong(40.7127, -74.0059);
+					break;
+				case "istanbul":
+					setPositionLatLong(41.013611, 28.955);
+					break;
+				case "dubai":
+					setPositionLatLong(25.263056, 55.297222);
+					break;
+				case "paris":
+					setPositionLatLong(48.8567, 2.3508);
+					break;
+				case "bangkok":
+					setPositionLatLong(13.75, 100.466667);
+					break;
+				case "london":
+					setPositionLatLong(51.507222, -0.1275);
+					break;
+			}
+		};
+
+		function getID(event) {
+			changeMap(event.id);
+		};
+	    
+	    function getLocation() {
+	        if (navigator.geolocation) {
+	            navigator.geolocation.getCurrentPosition(setPosition);
+	        } else {
+	            alert('Your Browser Does Not Support Geolocation');
+	        }
+	    }
+
+	    function setPosition(position) {
+			myLatLng.lat = position.coords.latitude;
+			myLatLng.lng = position.coords.longitude;
+			initMap()	 
+	    }
+
+	    function setPositionLatLong(lat, long) {
+			myLatLng.lat = lat;
+			myLatLng.lng = long;
+			initMap()	 
+	    }
+
+	    function initMap() {	      
+	        map = new google.maps.Map(document.getElementById('map'), {
+	            zoom: 8,
+	            center: myLatLng
+	        });
+
+	        var marker = new google.maps.Marker({
+	            position: myLatLng,
+	            map: map
+	        });
+	    }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmhi6W9oJYlH8J3fDPL2q26dQwkW4tMGk&callback=getLocation">
+    </script>
+
+<!-- BOTTOM OF PAGE -->
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified JavaScript; always after -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
