@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		body, 
+		button{
+			font-family: "Helvetica Neue", arial, sans-serif;
+		}
+
+		.controls{
+			padding: 1%;
+			background-color: #111;
+			color: white;
+		}
+
+		label{
+			font-weight: 300;
+			margin: 0 20px 0 0;
+		}
+
+		button{
+			display: inline-block;
+			padding: 5px 10px;
+			background: #666;
+			border: 0;
+			color: #eee;
+			font-size: 16px;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		button.active{
+			background-color: #999;
+		}
+
+		button:focus{
+			outline: 0 none;
+		}
+
+		button + label{
+			margin-left: 1em;
+		}
+
+		.container{
+			position: relative;
+			padding: 2% 2% 0;
+			text-align: justify;
+			font-size: 0.1px;
+			background: #ddd;
+			min-height: 200px;
+		}
+
+		.container:after{
+			content: "";
+			display: inline-block;
+			width: 100%;
+		}
+
+		.container .mix,
+		.container .gap{
+			display: inline-block;
+			width: 100%;
+		}
+
+		.container .mix{
+			text-align: left;
+			background-color: #aaa;
+			margin-bottom: 2%;
+			border-radius: 8px;
+			display: none;
+		}
+
+		.container .mix:after{
+			content: attr(class);
+			color: white;
+			font-size: 16px;
+			display: inline-block;
+			vertical-align: top;
+			padding: 4% 6%;
+			font-weight: 200;
+		}
+
+		.container .mix:before{
+			content: "";
+			display: inline-block;
+			padding-top: 60%;
+		}
+
+		.container .fail-message{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			padding: 2%;
+			text-align: center;
+		}
+
+		.container.fail .fail-message{
+			opacity: 1;
+			pointer-events: all;
+		}
+		
+		.container.fail .fail-message:before{
+			content: "";
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+		}
+
+		.container .fail-message span{
+			display: inline-block;
+			font-weight: 500;
+			color: #555;
+			font-size: 20px;
+			vertical-align: middle;
+		}
+
+		@media all and (min-width: 768px){
+			.container .mix,
+			.container .gap{
+				width: 48%;
+			}
+		}
+
+		@media all and (min-width: 1024px){
+			.container .mix,
+			.container .gap{
+				width: 24%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="control">
+
+		<div class="fail-message">
+			<span>no items</span>
+		</div>
+
+		<label>filter</label>
+		<button class="filter" data-filter=".dogs">dogs</button>
+		<button class="filter" data-filter=".cats">cats</button>
+		<button class="filter" data-filter=".goats">goats</button>
+		<button id="reset">reset</button>
+		<label>Sort:</label>
+		<button class="sort" data-sort="default">Default</button>
+		<button class="sort" data-sort="myorder:asc">Ascending</button>
+		<button class="sort" data-sort="myorder:desc">Descending</button>
+		<button class="sort" data-sort="random">Random</button>
+
+		
+	</div>
+
+
+	<div id="container" class="container">
+		<div class="mix dogs cats" data-myorder="1"></div>
+		<div class="mix cats" data-myorder="2"></div>
+		<div class="mix goat cats" data-myorder="3"></div>
+		<div class="mix dogs cats goats" data-myorder="4"></div>
+		<div class="mix goats" data-myorder="5"></div>
+
+		<div class="gap"></div>
+		<div class="gap"></div>
+	</div>
+
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript" scr="jquery.mixitup.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+
+		$("#reset").click(function(){
+			$("#container").mixItUp({"filter", "all"});
+		});
+
+		$("#container").mixItUp({
+			load: {
+				filter: "all"
+			},
+			controls:{
+				toggleFilterButtons: true,
+				toggleLogic: "and"
+			},
+			animation:{
+				enable: true,
+				effects: "scale fade",
+				duration: 200,
+				easing: "ease",
+				perspectiveDistance: "3px"
+			},
+			callbacks:{
+				onMixEnd: function(state){
+					console.log(state.activeFilter);
+				}
+			}
+		});
+
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>asdf</title>
+	<style type="text/css">
+		#sb{
+			position: absolute;
+			top: 500px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+
+<img src="img/soccer-ball.png" id="sb">
+
+<img src="img/basket-ball.png" class="bBall">
+<img src="img/basket-ball.png" class="bBall">
+<img src="img/basket-ball.png" class="bBall">
+<img src="img/basket-ball.png" class="bBall">
+<img src="img/basket-ball.png" class="bBall">
+
+<!-- greensock and pluggins -->
+<script type="text/javascript" src="js/TweenMax.min.js"></script>
+<script type="text/javascript">
+	var sb = document.getElementById("sb");
+	// TweenMax.to(element, time in seconds, {options object}, optional delay)
+	
+	// TweenMax.to(sb, 3, {
+	// 	left: 800,
+	// 	top: 300 
+	// });
+	// must have initial position before tween
+
+	TweenMax.to(sb, 3, {
+		x: 800, 
+		y: -500, 
+		rotation: 720, 
+		scale: 0.5,	
+		ease: Elastic.easeOut
+	});
+
+	TweenMax.staggerTo(".bBall", 1, {
+		y: 500, 
+		rotation: 360, 
+		delay: 0, 
+		ease: Bounce.easeOut
+	}, 0.5);
+
+	TweenMax.to(".bBall, #sb", 1, {
+		opacity: 0,
+		delay: 0,
+		onComplete: imDone,
+	})
+
+	function imDone(){
+		alert("Done");
+	}
+
+</script>
+</body>
+</html>
