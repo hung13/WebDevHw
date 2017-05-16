@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Around London in 80 Clicks</title>
+	<link rel="stylesheet" type="text/css" href="css/cityStyles.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <script src="js/modernizr-2.6.2.min.js"></script>
+
+</head>
+<body>
+	<!-- https://www.cmacan.org/give -->
+	<img id="coloredMap" src="img/waterColorWorldMapNew.png">
+	<div class="container clearfix" id="test">
+
+		<div class="grid_4" id="aboutLondon">
+		<!-- http://www.visitlondon.com/traveller-information/getting-around-london/london-maps-and-guides/welcome-to-london -->
+			<img src="img/london_2.jpg">
+
+			<p> <strong>London</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus magna, aliquam eu sem non, egestas facilisis massa. Vestibulum eu egestas tortor. Aliquam ornare tellus ut est blandit, nec commodo tellus egestas. Suspendisse efficitur dapibus eleifend. Etiam vel semper magna, at finibus sapien. </p>
+
+			<a href="index.html"><button class="back">
+				<i class="fa fa-home fa-2x" aria-hidden="true"></i>
+			</button></a>
+
+			<button class="btn next">
+				<i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
+			</button> 
+
+		</div>
+
+
+		<div class="grid_8" id="googleMap"></div>
+
+
+		<div class="grid_4" id="landmark1">
+		<!-- https://www.londondrum.com/cityguide/sherlock-holmes-museum.php -->
+			<img src="img/sherlock_2.jpg">
+
+			<p> <strong>Sherlock Holmes Museum </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus magna, aliquam eu sem non, egestas facilisis massa. Vestibulum eu egestas tortor. Aliquam ornare tellus ut est blandit, nec commodo tellus egestas. Suspendisse efficitur dapibus eleifend. Etiam vel semper magna, at finibus sapien. </p>
+
+			<button class="back">
+				<i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+			</button>
+
+			<button class="btn2 next">
+				<i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
+			</button>
+
+		</div>		
+		
+
+		<div class="grid_4" id="landmark2">
+		<!-- http://journeydownthescale.info/mngzrif-leakestreet.asp -->
+			<img src="img/streetArt_2_cropped.jpg">
+			<p> <strong> Leake Street Tunnel </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus magna, aliquam eu sem non, egestas facilisis massa. Vestibulum eu egestas tortor. Aliquam ornare tellus ut est blandit, nec commodo tellus egestas. Suspendisse efficitur dapibus eleifend. Etiam vel semper magna, at finibus sapien. </p>
+
+			<button class="back">
+				<i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+			</button>
+
+			<button class="btn3 next">
+				<i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
+			</button>
+		</div>
+		
+
+		<div class="grid_4" id="landmark3">
+		<!-- http://khoollect.com/eat-kitchen/visit-maltby-street-market/ -->
+			<img src="img/food_2_cropped.jpg">
+			<p> <strong> Maltby Street Market </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus magna, aliquam eu sem non, egestas facilisis massa. Vestibulum eu egestas tortor. Aliquam ornare tellus ut est blandit, nec commodo tellus egestas.  Suspendisse efficitur dapibus eleifend. Etiam vel semper magna, at finibus sapien. </p>
+
+			<button class="back">
+				<i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+			</button>
+		</div>
+	</div>
+
+
+
+<!-- ======================================== -->
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script type="text/javascript" src="js/TweenMax.min.js"></script>
+
+	<script
+	  src="http://code.jquery.com/jquery-2.2.4.min.js"
+	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	  crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var $1 = $("#aboutLondon"),
+				$2 = $("#googleMap"),
+				$3 = $("#landmark1"),
+				$4 = $("#landmark2"),
+				$5 = $("#landmark3"),
+				$btn = $(".btn"),
+				$btn2 = $(".btn2"),
+				$btn3 = $(".btn3"),
+				$backBtn = $(".back"),
+				$1_width = $1.width();
+
+			$btn.click(function(){
+				TweenMax.to($1, 0.3, {x: -($1_width + 40)});
+				TweenMax.to($2, 0.3, {x: -($1_width + 40)});			
+				TweenMax.to($3, 0.3, {x: -($1_width + 40)});
+			});
+
+			$btn2.click(function(){
+				TweenMax.to($1, 0.3, {x: -($1_width + 40)});
+				TweenMax.to($2, 0.3, {x: -($1_width + 40)});
+				TweenMax.to($3, 0.1, {x: -(10000000)});			
+				TweenMax.to($4, 0.3, {x: -($1_width + 40)});
+			});
+
+			$btn3.click(function(){
+				TweenMax.to($1, 0.3, {x: -($1_width + 40)});
+				TweenMax.to($2, 0.3, {x: -($1_width + 40)});
+				TweenMax.to($4, 0.1, {x: -(10000000)});			
+				TweenMax.to($5, 0.3, {x: -($1_width + 40)});
+			});
+
+			$backBtn.click(function(){
+				TweenMax.to($1, 0.3, {x: ""});
+				TweenMax.to($2, 0.3, {x: ""});			
+				TweenMax.to($3, 0.3, {x: ""});			
+				TweenMax.to($4, 0.3, {x: ""});			
+				TweenMax.to($5, 0.3, {x: ""});
+			});
+
+		});
+	</script>
+
+	<!-- /////////////////// GOOGLE MAP JS ////////////////// -->
+
+	<script>
+		var london = {lat: 51.507222, lng: -0.1275};
+		var museum = {lat: 51.5237, lng: -0.1585};
+		var tunnel = {lat: 51.502, lng: -0.1157};
+		var market = {lat: 51.499272, lng: -0.07576};
+
+		var latlng = london;
+		var mapDiv = document.getElementById("googleMap");
+		var mapOptions = {zoom: 7, center: latlng};
+
+		var $btn = $(".btn"),
+			$btn2 = $(".btn2"),
+			$btn3 = $(".btn3"),
+			$backBtn = $(".back");
+
+		$btn.click(function(){
+			latlng = museum;
+		    mapOptions = {zoom: 16, center: latlng};
+			myMap();
+		});
+
+		$btn2.click(function(){
+			latlng = tunnel;
+		    mapOptions = {zoom: 16, center: latlng};
+			myMap();
+		});
+
+		$btn3.click(function(){
+			latlng = market;
+		    mapOptions = {zoom: 16, center: latlng};
+			myMap();
+		});
+
+		$backBtn.click(function(){
+			latlng = london;
+		    mapOptions = {zoom: 7, center: latlng};
+			myMap();
+		});
+
+		function myMap(){
+			var map = new google.maps.Map(mapDiv, mapOptions);
+			var marker = new google.maps.Marker({position: latlng, map: map});
+		};
+	</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx5j3AcFXRTKDLsaB2w1ELasEmOLKPR4w&callback=myMap"></script>
+
+<!-- ///////////////////////////////////////////////////// -->
+	
+</body>
+</html>

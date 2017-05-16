@@ -1,0 +1,117 @@
+/*colors:
+	electric: #3cc47c
+	forest: #1e392a
+	light: #e9c893
+	tin: #828081
+	ocean: #1fb58f
+	sand: #eab126
+	cocktail: #f24c4e
+	palm: #1b7b34
+	sky: #caebf2
+	carbon: #a9a9a9
+	watermelon: #ff3b3f
+	neutral: #efefef
+	ice: #99d3df
+	freshwater: #88bbd6
+	plaster: #cdcdcd
+	linen: #e9e9e9
+*/
+
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+body{
+	text-align: center;
+	position: relative;
+}
+
+div{
+	background-clip: content-box;
+}
+
+#cover{
+	width: 100vw;
+	height: 100vh;
+	background-color: #3cc47c;
+	z-index: 100;
+	text-align: center;
+	position: absolute;
+}
+
+#logo{
+	width: 50%;
+	margin: 5% auto;
+}
+
+#caret{
+	color: white;
+	position: absolute;
+	right: 48.5%;
+	bottom: 1%;
+}
+
+#balloon{
+	position: absolute;
+	width: 3%;
+	top: 17%;
+}
+
+#map{
+	width: 90%;
+	margin: 10px auto;
+}
+
+button{
+	cursor: pointer;
+	text-align: center;
+}
+
+.btn-circle {
+	width: 1%;
+	height: 1%;
+	padding: 6px;
+	border-radius: 15px;
+	background-color: #ffffff;
+	border: 2px solid black;
+}
+
+#LondonBtn{
+	position: absolute;
+	left: 42%;
+	top: 16.5%;
+}
+
+button a{
+	max-width: 0;
+	overflow: hidden;
+	color: black;
+	text-decoration: none;
+	display: block;
+}
+
+button:hover a{
+	max-width: 7rem;
+	transition: .1s;
+}
+
+.btn-circle:hover{
+  	width: 5%;
+  	height: 5%;
+  	border-radius: 6px;
+  	transition: .1s;
+}
+
+button:focus{
+	outline: 0 none;	
+	background-color: #ffffff;
+}
+
+
+
+
+
+

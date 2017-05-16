@@ -1,0 +1,133 @@
+/*
+Responsive 996px grid system ~ Style CSS.
+Copyright 2013, Josh Cope
+*/
+
+/* =============================================================================
+   Site Styles
+   ========================================================================== */
+
+/* =============================================================================
+   Page Styles
+   ========================================================================== */
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body{
+	position: relative;
+}
+
+#coloredMap{
+	position: absolute;
+	width: 90%;
+	left: 5%;
+	top: -10px;
+}
+
+.container{
+	margin: 20px auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.grid_4{
+	background-color: rgba(230, 230, 230, .5);
+	height: 85vh;
+	padding: 10px;
+	border-radius: 2%;
+}
+
+#googleMap{
+	height: 85vh;
+	border-radius: 2%;
+}
+
+#aboutLondon,
+#googleMap,
+#landmark1,
+#landmark2,
+#landmark3{
+	margin-top: 2%;
+}
+
+#landmark1,
+#landmark2,
+#landmark3{
+	position: absolute;
+}
+
+#aboutLondon img,
+#landmark1 img,
+#landmark2 img,
+#landmark3 img{
+	border: 2px solid black;
+	border-radius: 2%;
+}
+
+#myCarousel{
+    overflow: hidden;
+}
+
+.carousel-control{
+	color: cornflowerblue;
+}
+
+button{
+	text-align: center;
+	border: none;
+	width: 50px;
+	border-radius: 10%;
+	padding: 5px;
+}
+
+button:focus{
+	outline: 0 none;
+}
+
+button.next{
+	background-color: #3cc47c;
+	color: white;
+	margin-left: 31%;
+}
+
+button.back{
+	background-color: #ff3b3f;
+	color: white;
+	margin-right: 31%;
+}
+
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Tablet Portrait size to Base 996px */
+@media only screen and (min-width: 768px) and (max-width: 995px) {}
+
+/* All Mobile Sizes */
+@media only screen and (max-width: 767px) {}
+
+/* Mobile Landscape Size to Tablet Portrait */
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+/* Mobile Portrait Size to Mobile Landscape Size */
+@media only screen and (max-width: 479px) {}
+
+
+/* =============================================================================
+   Font-Face
+   ========================================================================== */
+/* This is the proper syntax for an @font-face file
+
+/* @font-face {
+font-family: 'FontName';
+src: url('../fonts/FontName.eot');
+src: url('../fonts/FontName.eot?iefix') format('embedded-opentype'),
+url('../fonts/FontName.woff') format('woff'),
+url('../fonts/FontName.ttf') format('truetype'),
+url('../fonts/FontName.svg#FontName') format('svg');
+font-weight: normal;
+font-style: normal; }
+*/

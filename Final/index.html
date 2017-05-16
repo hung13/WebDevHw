@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Around the World in 80 Clicks</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+</head>
+<body>
+	
+	<div id="cover">
+		<img id="logo" src="img/logo.png">
+		<i class="fa fa-caret-up fa-4x" id="caret" aria-hidden="true"></i>
+	</div>
+
+	<!-- <a href='http://www.freepik.com/free-vector/retro-hot-air-balloon_780869.htm'>Designed by Freepik</a> -->
+	<img id="balloon" src="img/balloon2_transparent.png">
+
+	<!-- https://www.cmacan.org/give -->
+	<img id="map" src="img/waterColorWorldMapNew.png">
+
+	<button class="btn-circle" id="LondonBtn">
+		<a href="london.html">London</a>
+	</button>
+
+<!-- ///////////////////////////////////////////////////// -->
+	<script type="text/javascript" src="js/TweenMax.min.js"></script>
+
+	<script
+	  src="http://code.jquery.com/jquery-2.2.4.min.js"
+	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	  crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var $caret = $("#caret"),
+				$cover = $("#cover"),
+			    $balloon = $("#balloon");
+
+			TweenMax.to(caret, 0.4, {ease: Power0.easeOut, y: -20, yoyo: true, repeat: -1});
+
+			$caret.click(function(){
+				TweenMax.to(cover, 1.0, {ease: Power0.easeOut, y: -1500});
+
+				var tl = new TimelineMax({repeat: -1});
+					tl.to(balloon, 2.0, {ease: Power0.easeOut, x: 230, y: -5, delay: 0.5})
+					  .to(balloon, 2.0, {ease: Power0.easeOut, x: 470, y: -50})			  
+					  .to(balloon, 1.5, {ease: Power0.easeOut, x: 590, y: 50})
+					  .to(balloon, 1.0, {ease: Power0.easeOut, x: 640, y: 130})
+					  .to(balloon, 1.5, {ease: Power0.easeOut, x: 755, y: 100})			  
+					  .to(balloon, 1.0, {ease: Power0.easeOut, x: 820, y: 77})
+					  .to(balloon, 1.0, {ease: Power0.easeOut, x: 875, y: 165})
+					  .to(balloon, 1.0, {ease: Power0.easeOut, x: 920, y: 65})
+					  .to(balloon, 0.5, {ease: Power0.easeOut, x: 940, y: 50})
+					  .to(balloon, 1.0, {ease: Power0.easeOut, x: 995, y: 30})
+					  .to(balloon, 1.0, {ease: Power0.easeOut, x: 1240, y: 30});
+			});
+		});
+	</script>
+</body>
+</html>
+
+
+
